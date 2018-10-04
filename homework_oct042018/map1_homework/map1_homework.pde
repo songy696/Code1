@@ -12,16 +12,21 @@ void setup() {
   size(600, 600);  
 }
 
-color r = 0;
-color g = 200;
+//color r = 0;
+//color g = 200;
 
 void draw() {
   
   //float bgcolor = map(mouseX, 0, width, 0, 255);
   //background(bgcolor);
   
-  r = int(map(mouseX, 0, width, 0, 255));
-  g = int(map(mouseY, 0, height, 0, 255));
-  background(r,g,0);
+  float r = map(mouseX, 0, width, 0, 255);
+  float g = map(mouseY, 0, height, 0, 255);
+  float b = map(mouseX + mouseY, 0, width + height, 0, 255);
+  background(r,g,b);
+  
+  //r = int(map(mouseX, 0, width, 0, 255));
+  //g = int(map(mouseY, 0, height, 0, 255));
+  //background(r,g,0);
   
 }

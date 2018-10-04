@@ -17,13 +17,17 @@ void setup() {
 void draw() {
   background(255);
   
-  for (int i = 0; i < 20; i++) {
+  for (int i = 0; i <= 200; i++) {
+    float xPos = map(i , 0, 200, width/2-100, width/2 +100);
+    float yPos = map(i, 0, 200, height/2 - 100, height +100);
+    //for(int j = 0; j <5; j++){
+    //float yPos = map(j, 0, 5, 80, 650);
     
-    float xPos = map(i , 0, 20, 30, width);
-    for(int j = 0; j <5; j++){
-    float yPos = map(j, 0, 5, 80, 650);
-
-    rect(xPos, yPos, 20, 100);  
-    }
+    pushMatrix ();
+    translate(xPos,yPos);
+    rotate(radians(i + frameCount * 0.5));
+    rect(0, 0, 20, 300);  
+    //}
+    popMatrix();
   }
 }
