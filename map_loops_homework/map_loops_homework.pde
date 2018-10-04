@@ -20,8 +20,10 @@ void draw() {
   for (int i = 0; i < 20; i++) {
     
     float xPos = map(i , 0, 20, 30, width);
-    float yPos = 
+    for(int j = 0; j <5; j++){
+    float yPos = map(j, 0, 5, 80, 650);
 
-    rect(xPos, yPos, 20, 100);    
+    rect(xPos, yPos, 20, 100);  
+    }
   }
 }
