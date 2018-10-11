@@ -1,7 +1,7 @@
 // bouncing ball needs = x, y, speed of them
 //float x, y, dx, dy;
 
-int num = 500;
+int num = 100;
 
 float[] x = new float [num];
 float[] y = new float [num];
