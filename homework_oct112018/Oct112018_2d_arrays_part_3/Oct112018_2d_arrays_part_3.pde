@@ -35,6 +35,12 @@ void draw() {
     for (int j = 0; j < gridH; j++) {
       pushMatrix();
       translate(i * width/gridW, j * height/gridH);
+      
+      float degrees = angles[i][j];
+      angles[i][j] = angles[i][j] +5;
+      float rads = radians(degrees);
+      rotate(rads);
+      
       rotate(radians(angles[i][j]));
       line(-width/gridW*0.5, 0, width/gridW*0.5, 0);
       popMatrix();

@@ -18,8 +18,11 @@
 
 int gridW = 10;
 int gridH = 10;
+int ellip = 60;
 
 boolean[][] isRed = new boolean[gridW][gridH];
+int[] wPosition = new int[ellip];
+int[] 
 
 void setup() {
   size(800, 800);
@@ -32,6 +35,14 @@ void setup() {
         isRed[i][j] = false;
       }
     }
+  }
+  
+    for (int i = 0; i < xPositions.length; i++) {
+    xPositions[i] = map(i, 0, 50, 40, 570);
+  }
+  for (int j = 0; j < yPositions.length; j++){
+    yPositions[j] = random(width);
+    tPositions[j] = random(height);
   }
 }
 

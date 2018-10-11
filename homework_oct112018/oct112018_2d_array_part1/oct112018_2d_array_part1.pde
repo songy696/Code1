@@ -18,12 +18,12 @@ String[][] my2dArray = new String[gridW][gridH];
 
 void setup() {
   size(800, 800);
-  textAlign(LEFT, TOP);
+  textAlign(CENTER, CENTER);
   noFill();
   stroke(255);
   for (int i = 0; i < gridW; i++) {
     for (int j = 0; j < gridH; j++) {
-      my2dArray[i][j] = "i=" + i + ", j=" + j;
+      my2dArray[i][j] = "Yolo=" + i + ", Awesome=" + j;
     }
   }
 }
@@ -32,7 +32,7 @@ void draw() {
   background(0);
   for (int i = 0; i < gridW; i++) {
     for (int j = 0; j < gridH; j++) {
-      text(my2dArray[i][j], i * width/gridW, j * height/gridH);
+      text(my2dArray[i][j], i * width/5, j * height/2);
     }
   }
 }
