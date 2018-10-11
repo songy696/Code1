@@ -20,20 +20,27 @@
 //  you could control the color based on the mouse distance to each ball by using 
 //  the dist() function and map().
 
-Ball myBall1;
-Ball myBall2;
-Ball myBall3;
+Ball[] b = new Ball[3];
+//Ball myBall1;
+//Ball myBall2;
+//Ball myBall3;
 
 void setup() {
   size(800, 800);
+  
+  for(int i = 0; i < b.length; i++){
+    b[i] = new Ball();
+  }
 
-  myBall1 = new Ball();
-  myBall2 = new Ball();
-  myBall3 = new Ball();
 }
 
 void draw() {
   background(20);
+  
+  for(int i = 0; i < b.length; i++){
+    b[i] = b.update();
+    b[i] = b.display();
+  }
   myBall1.update();
   myBall1.display();
   

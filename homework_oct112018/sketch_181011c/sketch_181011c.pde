@@ -17,14 +17,19 @@ int gridW = 20;
 int gridH = 20;
 
 float[][] angles = new float[gridW][gridH];
+float[][] rotateAngleBy = new float[gridW][gridH];
+float[][] sizes = new float [gridW][gridH];
 
 void setup() {
   size(800, 800);
   stroke(255);
   for (int i = 0; i < gridW; i++) {
     for (int j = 0; j < gridH; j++) {
+      //angles[i][j] = map(j, 0, gridH, 0, 180);
       angles[i][j] = map(i, 0, gridW, 0, 180);
-    }
+      rotateAngleBy[i][j] = map(i,0,gridW,-2, 2);
+    sizes[i][j] = map(i, 0, gridW,1, 10);
+  }
   }
 }
 
@@ -35,7 +40,8 @@ void draw() {
     for (int j = 0; j < gridH; j++) {
       pushMatrix();
       translate(i * width/gridW, j * height/gridH);
-      
+      angles[i][j] += int(random(0,15));//map(j, 0, gridH, -3, 3); //rotateAngleBy[i][j]
+    
       //float degrees = angles[i][j];
       //angles[i][j] = angles[i][j] +5;
       //float rads = radians(degrees);
@@ -43,8 +49,9 @@ void draw() {
       
       rotate(radians(angles[i][j]));
       
-      float x1 = -width/gridW*0.5 * 10;
-      float x2 =  width/gridW*0.5 * 10;
+      float x1 = -width/gridW*0.5 * 1;
+      float x2 =  width/gridW*0.5 * 1;
+      
       line(x1, 0, x2, 0);
       popMatrix();
     }

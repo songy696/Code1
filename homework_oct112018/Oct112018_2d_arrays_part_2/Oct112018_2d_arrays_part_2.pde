@@ -21,15 +21,18 @@ int gridH = 10;
 int ellip = 60;
 
 boolean[][] isRed = new boolean[gridW][gridH];
-int[] wPosition = new int[ellip];
-int[] 
+float[][] whatSizes = new float[gridW][gridH];
+float[][] heights = new float [gridW][gridH];
 
 void setup() {
   size(800, 800);
   noStroke();
   for (int i = 0; i < gridW; i++) {
     for (int j = 0; j < gridH; j++) {
-      if (i >= gridW/2 && j >= gridH/2) {
+      whatSizes [i][j] = map(i, 0, gridW, 30, 150);
+      heights [i][j] = map(i, 0, gridH, 30, 150);
+      
+      if (i <= gridW/2 && j <= gridH/2) {
         isRed[i][j] = true;
       } else {
         isRed[i][j] = false;
@@ -37,13 +40,6 @@ void setup() {
     }
   }
   
-    for (int i = 0; i < xPositions.length; i++) {
-    xPositions[i] = map(i, 0, 50, 40, 570);
-  }
-  for (int j = 0; j < yPositions.length; j++){
-    yPositions[j] = random(width);
-    tPositions[j] = random(height);
-  }
 }
 
 void draw() {
@@ -56,8 +52,8 @@ void draw() {
       } else {
         fill(200, 200, 200);
       }
-      float w = width/gridW;
-      float h = height/gridH;
+      float w = whatSizes[i][j];
+      float h = heights[i][j];
       float xPos = i * width/gridW + w/2;
       float yPos = j * height/gridH + h/2;
       
