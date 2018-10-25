@@ -9,7 +9,7 @@
 // float in the loop every frame. try to add more arrays 
 // (for colors, angles, etc) if there is behavior that 
 // you want to change that doesn't involve positions.
-int manyRects = 50;
+int manyRects = 300;
 float[] xPositions = new float[manyRects];
 float[] yPositions = new float [manyRects];
 
@@ -19,18 +19,16 @@ void setup() {
     
     xPositions[i] = random(width);
     yPositions[i] = random(height);
-    s[i] = random
+
   }
- 
 }
 
 void draw() {
   for (int i = 0; i < xPositions.length; i++) {
-    xPositions[i] ++;
-    yPositions[i] ++;
+    xPositions[i] += random(-10, 12);
+    yPositions[i] += random(-10,12);
     //float move = map(i, 0, 50, 1 ,50);
-    rect(xPositions[i], xPositions[i], 30, 30);
-    //fill(random(0,255));
+    rect(xPositions[i], yPositions[i], 30, 30);
+    fill(random(0,255));
   }
- 
 }

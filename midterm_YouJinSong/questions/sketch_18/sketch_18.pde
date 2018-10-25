@@ -12,22 +12,33 @@ float[][] greyColors = new float[gridW][gridH];
 
 void setup() {
   size(600, 600);
-  for (int i = 0; i < gridW; i++) {
-    for (int j = 0; j < gridH; j++) {
+  for (int i = 0; i < gridW; i = i+1) {
+    for (int j = 0; j < gridH; j = j+1) {
       greyColors[i][j] = map(j * gridW + i, 0, gridW * gridH, 0, 255);
     }
   }
 }
 
 void draw() {
-  for (int i = 0; i < gridW; i++) {
-    for (int j = 0; j < gridH; j++) {
+  for (int i = 0; i < gridW; i+=1) {
+    for (int j = 0; j < gridH; j+=1) {
+      // if( greyColors[i][j] == 255){
+      //     greyColors[i][j]= 0;
+      //}
+      
       greyColors[i][j]+=1;
       fill(greyColors[i][j]);
-      int x = int(map(i, 0, 10, 0, 10));
-      int y = int(map(j, 0, 10, 0, 10));
+      
+       if( greyColors[i][j] == 255){
+           greyColors[i][j]= 0;
+      }
+      int x = int(map(i, 0, 10, 0, 600));
+      int y = int(map(j, 0, 10, 0, 600));
       rect(x, y, width/gridW, height/gridH);
       x += i;
+
     }
+    
+    
   }
 }
