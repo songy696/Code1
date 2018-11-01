@@ -15,7 +15,7 @@
 // like that could be done in this way - creating the class to contain an array 
 // of images, and having the class's display method cycle through the frames.  
 
-int numFrames = 12;  // The number of frames in the animation
+int numFrames = 3;  // The number of frames in the animation
 int currentFrame = 0;
 PImage[] images = new PImage[numFrames];
     
@@ -24,22 +24,29 @@ void setup() {
   frameRate(24);
   imageMode(CENTER);
   
-  images[0]  = loadImage("PT_anim0000.gif");
-  images[1]  = loadImage("PT_anim0001.gif"); 
-  images[2]  = loadImage("PT_anim0002.gif");
-  images[3]  = loadImage("PT_anim0003.gif"); 
-  images[4]  = loadImage("PT_anim0004.gif");
-  images[5]  = loadImage("PT_anim0005.gif"); 
-  images[6]  = loadImage("PT_anim0006.gif");
-  images[7]  = loadImage("PT_anim0007.gif"); 
-  images[8]  = loadImage("PT_anim0008.gif");
-  images[9]  = loadImage("PT_anim0009.gif"); 
-  images[10] = loadImage("PT_anim0010.gif");
-  images[11] = loadImage("PT_anim0011.gif"); 
+  images[0]  = loadImage("animal_0.png");
+  images[1]  = loadImage("animal_1.png"); 
+  images[2]  = loadImage("animal_2.png");
+
 } 
  
 void draw() { 
   background(0);
   currentFrame = (currentFrame+1) % numFrames;
   image(images[currentFrame], width/2, height/2);
+ }
+ 
+ class Animal {
+   float x;
+   float y;
+   float time;
+   
+   Animal(float x, float y){
+     this.x = x/4;
+     this.y = y/4;
+   }
+   
+ 
+ 
+ 
  }

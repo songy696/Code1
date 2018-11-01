@@ -14,18 +14,24 @@
 // arrayOfPImages. 
 
 String[] arrayOfImageFilenames;
-PImage[] arrayOfPImages;
+PImage[] arrayOfPImages = new PImage[3];
 PImage[] arrayOfIamgePaths;
 
 void setup() {
+  //arrayOfPImages[0] = loadImage("animal_1.tiff");
+  //arrayOfPImages[1] = loadImage("animal_2.tiff");
+  //arrayOfPImages[2] = loadImage("animal_3.tiff");
+  
   for (int i = 0; i < arrayOfImageFilenames.length; i++) {
-    arrayOfPImages[i] = loadImage(arrayOfImageFilenames[i]);  
+    arrayOfPImages[i] = loadImage("animal_" + i + "tiff");
   }
 }
 
 void draw() {
   for (int i = 0; i < arrayOfImageFilenames.length; i++) {
-    arrayOfPImages[i] = loadImage("totoro_exercising.gif");
     
+    arrayOfPImages[0] = loadImage("animal_1.tiff");
+  arrayOfPImages[1] = loadImage("animal_2.tiff");
+  arrayOfPImages[2] = loadImage("animal_3.tiff");
   }
 }
