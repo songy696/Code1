@@ -17,7 +17,7 @@ void setup() {
 
 void draw() {
   pushMatrix();
-  translate(x, y);
+  translate(x, y); // you could've use (y, x);
   rotate(radians(frameCount + y));
   stroke(0, 130);
   line(-50, 0, 50, 0);

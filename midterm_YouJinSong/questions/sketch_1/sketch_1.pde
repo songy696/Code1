@@ -19,6 +19,7 @@ void draw() {
   ellipse(width/2, height/2, d, d);
   d += incr;
   if(d < 10 || d > 600){
-    incr *= -1;
+    //incr *= -1;
+    incr = - incr;
   }
 }

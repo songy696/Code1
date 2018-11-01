@@ -31,9 +31,9 @@ void setup() {
   anotherBrowine.brownieInfo();
   aBrownie.eat("vigorously");
   
-  ITried atried = new ITried("worked", "really");
-  atried.iTriedInfo();
-  aBrownie.eat("vigorously");
+  //ITried atried = new ITried("worked", "really");
+  //atried.iTriedInfo();
+  //aBrownie.eat("vigorously");
 
 }
 
@@ -101,4 +101,38 @@ class Brownie {
   }
   
   }
+  
+  class Milk{
+   String type;
+   float amount;
+   int daysUntilExpiration;
+   
+   Milk(String type, float amount, int days){
+     this.type = type;
+     this.amount = amount;
+     this.daysUntilExpiration = days;
+   }
+   
+   void drink(float houMuch){
+     if(this.amount > houMuch){
+       this.amount -= howMuch;
+       println("you drank " + howMuch + " milk!");
+       
+     }
+   }
+  
+  }
+  
+  class CookieJar{
+    ArrayList<Cookie> cookies = new ArrayList<Cookie>();
+    CookieJar(){
+      for(int i = 0; i < 10; i++){
+        cookies.add(new Cookie("chocolate chip", "small"));
+      }
+    }
+    cookies takeCookie(){
+       
+    }
+  }
+  
 }

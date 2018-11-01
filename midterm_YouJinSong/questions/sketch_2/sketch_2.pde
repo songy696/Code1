@@ -22,22 +22,26 @@ void draw() {
   ellipse(xPos, yPos, 30, 30);
 
   float r = random(4);
-  float ry = random(4);
+  //float ry = random(4);
 
   if (int(r) == 0) {
     xPos += 10;
 
-  } else {
+  } else if(int(r) == 1){
     xPos -= 10;
    
+  }else if(int(r) == 2){
+    yPos += 10;
+  }else if(int(r) == 3){
+    yPos -= 10;
   }
   
-   if (int(ry) == 0) {
-    yPos += 10;
+  // if (int(ry) == 0) {
+  //  yPos += 10;
 
-  } else {
-    yPos -= 10;
+  //} else {
+  //  yPos -= 10;
    
-  }
+  //}
   
 } 

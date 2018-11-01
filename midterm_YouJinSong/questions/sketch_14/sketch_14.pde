@@ -8,7 +8,7 @@ void setup() {
 
 void draw() {
   background(80);
-  //translate(mouseX, mouseY);
+  translate(mouseX, mouseY);
   noStroke();
-  rect(mouseX, mouseY, 100, 100);
+  rect(0, 0, 100, 100);
 }

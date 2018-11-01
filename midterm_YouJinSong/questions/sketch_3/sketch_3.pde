@@ -10,10 +10,10 @@ void setup() {
 
 void draw() {
   background(150);
-  if (mousePressed) {
-    if(mouseX > width/2 -100 && mouseY > height/2 - 100  && mouseX < width/2 + 100 && mouseY < height/2 + 100){
+  if (mousePressed & dist(mouseX, mouseY, width/2, height/2) < 100) {
+    //if(mouseX > width/2 -100 && mouseY > height/2 - 100  && mouseX < width/2 + 100 && mouseY < height/2 + 100){
     fill(255);}
-  } else {
+   else {
     fill(150);
   }
   

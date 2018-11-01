@@ -9,11 +9,14 @@ void setup() {
   noStroke();
 }
 
+int x = 15; // scope
+
 void draw() {
   background(150);
   for (int i = 0; i < 10; i++) {
-    int x = int(map(i, 0, 10, 30 , width));
+    int x = 15;
+    //int x = int(map(i, 0, 10, 30 , width));
     rect(x, 150, 30, 300);
-    x += i;
+    //x += i;
   }
 }

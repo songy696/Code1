@@ -22,15 +22,12 @@ void setup() {
 void draw() {
   for (int i = 0; i < gridW; i+=1) {
     for (int j = 0; j < gridH; j+=1) {
-      // if( greyColors[i][j] == 255){
-      //     greyColors[i][j]= 0;
-      //}
-      
       greyColors[i][j]+=1;
       fill(greyColors[i][j]);
       
-       if( greyColors[i][j] == 255){
+       if( greyColors[i][j] > 255){
            greyColors[i][j]= 0;
+
       }
       int x = int(map(i, 0, 10, 0, 600));
       int y = int(map(j, 0, 10, 0, 600));

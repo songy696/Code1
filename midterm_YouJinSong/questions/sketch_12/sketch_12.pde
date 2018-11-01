@@ -6,6 +6,7 @@
 // changes the color of the background.
 
 float bgColor = 0;
+boolean on = false;
 
 void setup() {
   size(600, 600);
@@ -13,14 +14,22 @@ void setup() {
 
 void draw() {
   background(bgColor);
-  
-}
-
-void mouseReleased() {
-  if(bgColor == 0) {
+  if(on) {
     bgColor = 255;
   } else {
     bgColor = 0;
   }
+  
+}
+
+void mouseReleased() {
+  on = !on;
+  
+  
+  //if(bgColor == 0) {
+  //  bgColor = 255;
+  //} else {
+  //  bgColor = 0;
+  //}
   
 }
