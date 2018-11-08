@@ -15,18 +15,20 @@
 
 ArrayList<MyClass> myArrayList = new ArrayList<MyClass>();
 
-PImage img;
+//PImage img;
 
 void setup() {
   size(600, 600);
-  img = loadImage("chick.png");
+  imageMode(CENTER);
+  //img = loadImage("chick.png");
 }
 
 void draw() {
   background(230);
   
-  if (frameCount % 30 == 0) {
-    myArrayList.add(new MyClass(random(width), random(height)));
+  if (frameCount % 30 == 0) {//counts the remainder of the division
+    myArrayList.add(new MyClass(random(width), random(height), "chick.png"));
+    myArrayList.add(new MyClass(random(width), random(height), "rabbit.png"));
   }
   
   for (int i = 0; i < myArrayList.size(); i++) {
@@ -49,12 +51,14 @@ class MyClass {
   float x; 
   float y;
   float timeRemaining;
+  PImage img;
  
   
-  MyClass(float x, float y) {
+  MyClass(float x, float y, String pathName) {
     this.x = x;
     this.y = y;
     this.timeRemaining = 180;
+    this.img = loadImage(pathName);
   }
   
   void update() {

@@ -13,25 +13,29 @@
 // all the images by looping through the results of filling the
 // arrayOfPImages. 
 
-String[] arrayOfImageFilenames;
-PImage[] arrayOfPImages = new PImage[3];
+String[] arrayOfImageFilenames = new String[3];//{"animal_0.png", "animal_1.png", "animal_2.png"};
+PImage[] arrayOfPImages = new PImage[arrayOfImageFilenames.length];
 PImage[] arrayOfIamgePaths;
 
 void setup() {
-  //arrayOfPImages[0] = loadImage("animal_1.tiff");
-  //arrayOfPImages[1] = loadImage("animal_2.tiff");
-  //arrayOfPImages[2] = loadImage("animal_3.tiff");
+   size(600,600);
+   imageMode(CENTER);
+  
+  for(int i = 0; i < arrayOfImageFilenames.length; i++){
+    arrayOfImageFilenames[i] = "animal_" + i + ".png";
+  }
   
   for (int i = 0; i < arrayOfImageFilenames.length; i++) {
-    arrayOfPImages[i] = loadImage("animal_" + i + "tiff");
+    arrayOfPImages[i] = loadImage(arrayOfImageFilenames[i]);
   }
 }
 
 void draw() {
-  for (int i = 0; i < arrayOfImageFilenames.length; i++) {
+  background(255);
+  for (int i = 0; i < arrayOfPImages.length; i++) {
+    float x = map(i, 0, arrayOfPImages.length - 1, 100, width);
+    //float prop = arrayOfPImages[i].width/arrayOfPImages[i].height;
+    image(arrayOfPImages[i], x, height/2, 100, 100);
     
-    arrayOfPImages[0] = loadImage("animal_1.tiff");
-  arrayOfPImages[1] = loadImage("animal_2.tiff");
-  arrayOfPImages[2] = loadImage("animal_3.tiff");
   }
 }
