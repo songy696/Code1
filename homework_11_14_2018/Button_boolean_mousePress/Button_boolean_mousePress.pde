@@ -27,6 +27,7 @@ void draw() {
   background(100);
   button.display();
   secondButton.display();
+  //println(secondButton.getButtonStatus());
 }
 
 void mousePressed() {
@@ -65,6 +66,7 @@ class Button {
     rect(x, y, w, h);
   }
   
+  //bollean function
   boolean getButtonStatus() {
     return pressed;
   }
@@ -93,6 +95,7 @@ class SecondButton {
   
   void display() {
     if (press) {
+      background(30);
       fill(240);
     } else {
       fill(150);

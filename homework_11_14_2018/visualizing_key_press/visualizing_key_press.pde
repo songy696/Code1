@@ -9,17 +9,25 @@ int x;
 int y;
 boolean newKeyShape = false;
 boolean newMouseShape = false;
+int numChars = 26;  
+color[] colors = new color[numChars];
 
 void setup() {
   size(800, 800);
+  colorMode(HSB, numChars);
+  for(int i = 0; i < numChars; i++) {
+    colors[i] = color(i, numChars, numChars);    
+  }
 }
 
 void draw() {
   if (newKeyShape) {
+    fill(random(numChars), random(numChars), random(numChars));
     ellipse(x, y, 100, 100);
     newKeyShape = false;
   }
   if (newMouseShape) {
+    fill(random(numChars), random(numChars), random(numChars));
     rect(x, y, 80, 80);
     newMouseShape = false;
   }

@@ -6,6 +6,8 @@
 // see previous sketch for instructions.
 
 String letters = "";
+ArrayList<Word> words = new ArrayList<Word>();
+int counter = 0;
 
 void setup() {
   size(600, 600);
@@ -16,13 +18,21 @@ void setup() {
 void draw() {
   background(100);
   text(letters, width/2, 50);
+  for(Word each : words){
+      each.display();
+    }
 }
 
 void keyPressed() {
   if ((key == ENTER) || (key == RETURN)) {
     println(letters);
-    letters = "hello";
+    Word w = new Word(width/2, 50 + counter, letters);
+    words.add(w);
+  
+    letters = "";
+    counter += 20;
   } else if ((key > 31) && (key != CODED)) {
+    //words.get(words.size() - 1).theWord += key;
     letters = letters + key;
   }
 }
